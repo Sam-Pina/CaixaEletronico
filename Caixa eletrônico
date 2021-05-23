@@ -1,0 +1,76 @@
+package ac2_algoritmos;
+
+import java.util.Scanner;
+
+public class AC2_Algoritmos {
+
+    public static void main(String[] args) {
+
+        System.out.println(".......... BEM VINDO AO JAVA BANK! .......... ");
+        int escolha = 0;
+        String cpf = "123.456.789-00";
+        int senha = 12345;
+        int saldo = 1000, deposito = 0, saque = 0, entrar, tentativa = 0;
+
+        Scanner ler = new Scanner(System.in);
+        System.out.print("Digite seu cpf: ");
+        cpf = ler.nextLine();
+
+        do {
+            if (cpf.equals("123.456.789-00")) {
+                System.out.print("Digite sua senha: ");
+                senha = ler.nextInt();
+
+                if (senha == 12345) {
+                    System.out.println("        BEM VINDO !!!");
+                    System.out.println(".......... MENU ........... ");
+                    System.out.println("1- Saldo");
+                    System.out.println("2- Depósito");
+                    System.out.println("3- Saque");
+                    System.out.println("4- Sair");
+                    System.out.println("........................... ");
+                    System.out.print("Escolha uma operação :");
+                    escolha = ler.nextInt();
+
+                } else {
+                    System.out.println("Senha incorreta!");
+                    tentativa++;
+                    if (tentativa == 2) {
+                        System.out.println("Mais uma tentativa errada e sua conta será bloqueada");
+                    }
+                }
+                switch (escolha) {
+                    case 1:
+                        saldo = saldo;
+                        System.out.println("saldo atual é: " + saldo);
+                        break;
+
+                    case 2:
+                        System.out.print("Digite a quantia para deposito: ");
+                        deposito = ler.nextInt();
+                        saldo = saldo + deposito;
+                        System.out.println("Seu deposito foi efetuado com sucesso e seu saldo atual é: " + saldo);
+                        break;
+
+                    case 3:
+                        System.out.print("Digite a quantia para saque: ");
+                        saque = ler.nextInt();
+                        saldo = saldo - saque;
+                        System.out.println("Seu saque foi efetuado com sucesso e seu saldo atual é: " + saldo);
+                        break;
+
+                    case 4:
+                        System.out.println("Sessao Finalizada");
+                        main(args);
+                        break;
+                   
+                    default:
+                        System.out.println("Opção inválida.");
+                        break;
+                }
+            } else {
+                System.out.println("CPF inválido!");
+            }
+        } while (senha != 12345 && tentativa <= 2);
+    }
+}
