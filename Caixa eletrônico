@@ -10,7 +10,7 @@ public class AC2_Algoritmos {
         int escolha = 0;
         String cpf = "123.456.789-00";
         String senha = "01020304";
-        int saldo = 1000, deposito = 0, saque = 0, entrar, tentativa = 0;
+        int saldo = 1000, deposito = 0, saque = 0, tentativa = 0;
 
         Scanner ler = new Scanner(System.in);
         System.out.print("Digite seu cpf: ");
@@ -19,9 +19,9 @@ public class AC2_Algoritmos {
         do {
             if (cpf.equals("123.456.789-00")) {
                 System.out.print("Digite sua senha: ");
-                senha = ler.nextLine();
+                senha = ler.next();
 
-                if (senha.equalsIgnoreCase("01020304")) {
+                if (senha.equals("01020304")) {
                     System.out.println("        BEM VINDO !!!");
                     System.out.println(".......... MENU ........... ");
                     System.out.println("1- Saldo");
