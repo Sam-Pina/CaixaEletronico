@@ -9,7 +9,7 @@ public class AC2_Algoritmos {
         System.out.println(".......... BEM VINDO AO JAVA BANK! .......... ");
         int escolha = 0;
         String cpf = "123.456.789-00";
-        int senha = 12345;
+        String senha = "01020304";
         int saldo = 1000, deposito = 0, saque = 0, entrar, tentativa = 0;
 
         Scanner ler = new Scanner(System.in);
@@ -19,9 +19,9 @@ public class AC2_Algoritmos {
         do {
             if (cpf.equals("123.456.789-00")) {
                 System.out.print("Digite sua senha: ");
-                senha = ler.nextInt();
+                senha = ler.nextLine();
 
-                if (senha == 12345) {
+                if (senha.equalsIgnoreCase("01020304")) {
                     System.out.println("        BEM VINDO !!!");
                     System.out.println(".......... MENU ........... ");
                     System.out.println("1- Saldo");
@@ -29,7 +29,7 @@ public class AC2_Algoritmos {
                     System.out.println("3- Saque");
                     System.out.println("4- Sair");
                     System.out.println("........................... ");
-                    System.out.print("Escolha uma operação :");
+                    System.out.print("Escolha uma operação : ");
                     escolha = ler.nextInt();
 
                 } else {
@@ -71,6 +71,6 @@ public class AC2_Algoritmos {
             } else {
                 System.out.println("CPF inválido!");
             }
-        } while (senha != 12345 && tentativa <= 2);
+        } while (senha != "01020304" && tentativa <= 2);
     }
 }
